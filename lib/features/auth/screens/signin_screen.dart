@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../../../core/constants/app_colors.dart';
-import '../../../core/constants/app_styles.dart';
-import '../../../core/widgets/app_widgets.dart';
+import '../../../core/theme/app_theme.dart';
+import '../../../core/widgets/gradient_text.dart';
+import '../../../core/widgets/kyozo_button.dart';
 import '../../../services/auth_service.dart';
 import 'verify_email_screen.dart';
 
@@ -164,34 +164,39 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.background,
-      body: SafeArea(
-        child: Column(
-          children: [
-            // App header with title
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  // App logo or title
-                  Text(
-                    'KyozoSocial',
-                    style: AppStyles.headingLarge.copyWith(
-                      color: AppColors.primaryPurple,
-                      fontWeight: FontWeight.bold,
+      backgroundColor: AppTheme.backgroundColor,
+      body: Container(
+        decoration: const BoxDecoration(
+          // Add subtle texture background like Next.js design
+          color: AppTheme.backgroundColor,
+        ),
+        child: SafeArea(
+          child: Column(
+            children: [
+              // App header with gradient title
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 32.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    // App logo with gradient text
+                    const GradientHeading(
+                      'KyozoSocial',
+                      fontSize: 36,
+                      fontWeight: FontWeight.w400,
                     ),
-                    textAlign: TextAlign.center,
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    _isSignIn ? 'Welcome back!' : 'Create your account',
-                    style: AppStyles.headingMedium,
-                    textAlign: TextAlign.center,
-                  ),
-                ],
+                    const SizedBox(height: 16),
+                    Text(
+                      _isSignIn ? 'Welcome back!' : 'Join the creative universe',
+                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                        color: AppTheme.textSecondaryColor,
+                        fontWeight: FontWeight.w300,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
               ),
-            ),
             
             // Main content in scrollable area
             Expanded(
@@ -206,9 +211,12 @@ class _SignInScreenState extends State<SignInScreen> {
                 
                 // Name field (only in sign-up mode)
                 if (!_isSignIn) ...[                
-                  AppTextField(
+                  TextFormField(
                     controller: _nameController,
-                    labelText: 'Full Name',
+                    decoration: const InputDecoration(
+                      labelText: 'Full Name',
+                      hintText: 'Enter your full name',
+                    ),
                     validator: (value) {
                       if (!_isSignIn && (value == null || value.isEmpty)) {
                         return 'Please enter your name';
@@ -217,14 +225,19 @@ class _SignInScreenState extends State<SignInScreen> {
                     },
                   ),
                   
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 20),
                 ],
                 
                 // Email field
-                AppEmailField(
+                TextFormField(
                   controller: _emailController,
-                  labelText: 'Email ID',
-                  customValidator: (value) {
+                  decoration: const InputDecoration(
+                    labelText: 'Email',
+                    hintText: 'Enter your email address',
+                    prefixIcon: Icon(Icons.email_outlined),
+                  ),
+                  keyboardType: TextInputType.emailAddress,
+                  validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter your email';
                     }
@@ -235,12 +248,17 @@ class _SignInScreenState extends State<SignInScreen> {
                   },
                 ),
                 
-                const SizedBox(height: 16),
+                const SizedBox(height: 20),
                 
                 // Password field
-                AppPasswordField(
+                TextFormField(
                   controller: _passwordController,
-                  labelText: 'Password',
+                  decoration: const InputDecoration(
+                    labelText: 'Password',
+                    hintText: 'Enter your password',
+                    prefixIcon: Icon(Icons.lock_outline),
+                  ),
+                  obscureText: true,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter your password';
@@ -254,11 +272,16 @@ class _SignInScreenState extends State<SignInScreen> {
                 
                 // Confirm Password field (only in sign-up mode)
                 if (!_isSignIn) ...[                
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 20),
                   
-                  AppPasswordField(
+                  TextFormField(
                     controller: _confirmPasswordController,
-                    labelText: 'Confirm Password',
+                    decoration: const InputDecoration(
+                      labelText: 'Confirm Password',
+                      hintText: 'Confirm your password',
+                      prefixIcon: Icon(Icons.lock_outline),
+                    ),
+                    obscureText: true,
                     validator: (value) {
                       if (!_isSignIn) {
                         if (value == null || value.isEmpty) {
@@ -273,31 +296,51 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                 ],
                 
-                const SizedBox(height: 8),
+                const SizedBox(height: 16),
                 
                 // Forgot password
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: AppTextButton(
-                    text: 'Forgot Password?',
-                    onPressed: () {
-                      // Navigate to forgot password screen
-                    },
-                    color: AppColors.primaryPurple,
+                if (_isSignIn)
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: TextButton(
+                      onPressed: () {
+                        // Navigate to forgot password screen
+                      },
+                      child: Text(
+                        'Forgot Password?',
+                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          color: AppTheme.accentPink,
+                          fontWeight: FontWeight.w300,
+                        ),
+                      ),
+                    ),
                   ),
-                ),
                 
                 // Error message
                 if (_errorMessage != null)
                   Padding(
                     padding: const EdgeInsets.only(top: 16),
-                    child: AppErrorText(
-                      text: _errorMessage!,
-                      textAlign: TextAlign.center,
+                    child: Container(
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: AppTheme.errorColor.withValues(alpha: 0.1),
+                        borderRadius: BorderRadius.circular(8),
+                        border: Border.all(
+                          color: AppTheme.errorColor.withValues(alpha: 0.3),
+                        ),
+                      ),
+                      child: Text(
+                        _errorMessage!,
+                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          color: AppTheme.errorColor,
+                          fontWeight: FontWeight.w400,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   ),
                 
-                const SizedBox(height: 32),
+                const SizedBox(height: 40),
                 
                       ],
                     ),
@@ -306,96 +349,93 @@ class _SignInScreenState extends State<SignInScreen> {
               ),
             ),
             
-            // Bottom section with Sign In button and Sign Up link
-            Padding(
-              padding: const EdgeInsets.all(24.0),
-              child: Column(
-                children: [
-                  // Sign In/Sign Up button
-                  SizedBox(
-                    height: 56, // Increased height for better text display
-                    child: AppPrimaryButton(
+              // Bottom section with Sign In button and Sign Up link
+              Padding(
+                padding: const EdgeInsets.all(24.0),
+                child: Column(
+                  children: [
+                    // Sign In/Sign Up button
+                    KyozoButton(
                       text: _isSignIn ? 'Sign In' : 'Get Started',
                       onPressed: _signInOrSignUp,
-                      isLoading: _isLoading,
-                      width: double.infinity,
+                      loading: _isLoading,
+                      fullWidth: true,
+                      variant: KyozoButtonVariant.primary,
+                      size: KyozoButtonSize.large,
                     ),
-                  ),
-                  
-                  const SizedBox(height: 16),
-                  
-                  // OR divider
-                  Row(
-                    children: [
-                      const Expanded(child: Divider(color: AppColors.border)),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 16),
-                        child: Text(
-                          'OR',
-                          style: AppStyles.bodyMedium.copyWith(
-                            color: AppColors.textSecondary,
+                    
+                    const SizedBox(height: 24),
+                    
+                    // OR divider
+                    Row(
+                      children: [
+                        const Expanded(child: Divider(color: AppTheme.borderColor)),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 16),
+                          child: Text(
+                            'OR',
+                            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                              color: AppTheme.textSecondaryColor,
+                              fontWeight: FontWeight.w300,
+                            ),
                           ),
                         ),
-                      ),
-                      const Expanded(child: Divider(color: AppColors.border)),
-                    ],
-                  ),
-                  
-                  const SizedBox(height: 16),
-                  
-                  // Google Sign-In button
-                  SizedBox(
-                    height: 56,
-                    child: OutlinedButton.icon(
+                        const Expanded(child: Divider(color: AppTheme.borderColor)),
+                      ],
+                    ),
+                    
+                    const SizedBox(height: 24),
+                    
+                    // Google Sign-In button
+                    KyozoButton(
+                      text: 'Continue with Google',
                       onPressed: _isLoading ? null : _signInWithGoogle,
+                      variant: KyozoButtonVariant.outline,
+                      size: KyozoButtonSize.large,
+                      fullWidth: true,
                       icon: const FaIcon(
                         FontAwesomeIcons.google,
                         color: Colors.red,
-                        size: 20,
-                      ),
-                      label: Text(
-                        'Continue with Google',
-                        style: AppStyles.bodyLarge.copyWith(
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      style: OutlinedButton.styleFrom(
-                        foregroundColor: AppColors.textPrimary,
-                        backgroundColor: Colors.white,
-                        side: const BorderSide(color: AppColors.border),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
+                        size: 18,
                       ),
                     ),
-                  ),
-                  
-                  const SizedBox(height: 16),
-                  
-                  // Toggle between Sign In and Sign Up
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      AppBodyText(
-                        text: _isSignIn ? 'Don\'t have an account?' : 'Already have an account?',
-                        size: BodyTextSize.medium,
-                      ),
-                      AppTextButton(
-                        text: _isSignIn ? 'Sign Up' : 'Sign In',
-                        onPressed: () {
-                          // Toggle between sign in and sign up modes
-                          setState(() {
-                            _isSignIn = !_isSignIn;
-                          });
-                        },
-                        color: AppColors.primaryPurple,
-                      ),
-                    ],
-                  ),
-                ],
+                    
+                    const SizedBox(height: 24),
+                    
+                    // Toggle between Sign In and Sign Up
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          _isSignIn ? 'Don\'t have an account?' : 'Already have an account?',
+                          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                            color: AppTheme.textSecondaryColor,
+                            fontWeight: FontWeight.w300,
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            // Toggle between sign in and sign up modes
+                            setState(() {
+                              _isSignIn = !_isSignIn;
+                              _errorMessage = null; // Clear error when switching
+                            });
+                          },
+                          child: Text(
+                            _isSignIn ? 'Sign Up' : 'Sign In',
+                            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                              color: AppTheme.accentPink,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
