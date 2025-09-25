@@ -1,0 +1,2 @@
+/Users/ashokjaiswal/Development/Axar/app/MeetMaxi/android/app/.cxx/RelWithDebInfo/2o2i6m3h/x86_64/CMakeFiles/edit_cache.dir
+/Users/ashokjaiswal/Development/Axar/app/MeetMaxi/android/app/.cxx/RelWithDebInfo/2o2i6m3h/x86_64/CMakeFiles/rebuild_cache.dir

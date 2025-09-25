@@ -1,0 +1,68 @@
+PRIVACY POLICY
+
+Last Updated: May 19, 2025
+
+This Privacy Policy describes how Axar Toys AI ("we," "us," or "our") collects, uses, and discloses your information when you use our MeetMaxi application ("App").
+
+1. INFORMATION WE COLLECT
+
+We collect several types of information from and about users of our App, including:
+
+Personal Information:
+- Email address and account credentials
+- Name and profile information
+- Child profiles (name, age, interests)
+- Voice recordings when using the App's voice features
+
+Usage Information:
+- Interaction with the App
+- Conversation history with the AI
+- Device information and identifiers
+- Log data and analytics
+
+2. HOW WE USE YOUR INFORMATION
+
+We use the information we collect to:
+- Provide, maintain, and improve the App
+- Personalize your experience
+- Process transactions
+- Communicate with you
+- Analyze usage patterns
+- Protect against fraud and abuse
+
+3. CHILDREN'S PRIVACY
+
+The App is designed for children to use under adult supervision. We comply with the Children's Online Privacy Protection Act (COPPA). We only collect personal information from children with verifiable parental consent.
+
+4. DATA RETENTION
+
+We retain your personal information for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law.
+
+5. DATA SECURITY
+
+We implement appropriate technical and organizational measures to protect your personal information. However, no method of transmission over the Internet or electronic storage is 100% secure.
+
+6. THIRD-PARTY SERVICES
+
+We may use third-party services, such as Google Cloud and Firebase, to support our App. These services may collect information about you when you use the App.
+
+7. YOUR RIGHTS
+
+Depending on your location, you may have rights regarding your personal information, including:
+- Access to your personal information
+- Correction of inaccurate information
+- Deletion of your information
+- Restriction of processing
+- Data portability
+
+8. INTERNATIONAL TRANSFERS
+
+Your information may be transferred to and processed in countries other than the one in which you reside. These countries may have different data protection laws.
+
+9. CHANGES TO THIS PRIVACY POLICY
+
+We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.
+
+10. CONTACT US
+
+If you have any questions about this Privacy Policy, please contact us at privacy@axartoys.ai.

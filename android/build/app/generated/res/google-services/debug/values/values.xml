@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">247893142235</string>
+    <string name="google_api_key" translatable="false">AIzaSyC-0ODQRGhLB-FxifDy-XVhKbze5PPC3uk</string>
+    <string name="google_app_id" translatable="false">1:247893142235:android:6168ba5b7e89c65087bafe</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyC-0ODQRGhLB-FxifDy-XVhKbze5PPC3uk</string>
+    <string name="google_storage_bucket" translatable="false">ask-maxie.firebasestorage.app</string>
+    <string name="project_id" translatable="false">ask-maxie</string>
+</resources>

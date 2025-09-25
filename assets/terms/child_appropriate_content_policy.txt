@@ -1,0 +1,67 @@
+CHILD APPROPRIATE CONTENT POLICY
+
+Last Updated: May 19, 2025
+
+At Axar Toys AI, we are committed to providing a safe and enriching experience for children using our MeetMaxi application ("App"). This Child Appropriate Content Policy outlines our standards and practices for ensuring all content within the App is suitable for children.
+
+1. CONTENT STANDARDS
+
+All content in the MeetMaxi App adheres to the following standards:
+
+- Age-Appropriate: Content is designed to be suitable for children of various age groups, with parental controls to customize the experience.
+- Educational Value: Content aims to be educational, stimulating curiosity and learning.
+- Positive Messaging: Content promotes positive values, including kindness, respect, and inclusion.
+- No Harmful Content: The App does not contain violence, inappropriate language, or mature themes.
+- No Advertising: Children's interactions are free from commercial advertising.
+
+2. AI CONVERSATION GUIDELINES
+
+Our AI is designed to:
+- Provide age-appropriate responses to children's questions
+- Redirect or decline to answer questions about inappropriate topics
+- Never encourage dangerous, illegal, or harmful activities
+- Promote critical thinking and learning
+- Respect cultural and family values
+
+3. CONTENT MODERATION
+
+We employ multiple layers of content moderation:
+- Pre-trained AI models designed to recognize and filter inappropriate content
+- Regular reviews of conversation logs to improve safety measures
+- Parent-controlled settings to customize the level of content filtering
+
+4. PARENTAL CONTROLS
+
+Parents can:
+- Review conversation history between their child and the AI
+- Set boundaries for topics the AI will discuss
+- Create custom personas with specific educational focuses
+- Set time limits for App usage
+
+5. REPORTING INAPPROPRIATE CONTENT
+
+If you encounter any content that you believe violates this policy:
+- Use the in-app reporting feature
+- Email us at safety@axartoys.ai
+- We will review all reports promptly and take appropriate action
+
+6. CONTINUOUS IMPROVEMENT
+
+We are committed to continuously improving our content safety measures through:
+- Regular updates to our AI models
+- Incorporating parent and educator feedback
+- Staying current with child development research
+- Consulting with child safety experts
+
+7. COMPLIANCE WITH REGULATIONS
+
+We comply with all applicable laws and regulations regarding children's online safety, including:
+- Children's Online Privacy Protection Act (COPPA)
+- General Data Protection Regulation (GDPR) requirements for children
+- Local and international standards for children's digital content
+
+8. CHANGES TO THIS POLICY
+
+We may update this policy from time to time. We will notify users of any significant changes by posting the new policy on this page and updating the "Last Updated" date.
+
+By using the MeetMaxi App, you acknowledge and agree to this Child Appropriate Content Policy.

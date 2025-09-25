@@ -1,0 +1,40 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.2.2'
+        classpath 'com.google.gms:google-services:4.4.0'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.22'
+    }
+}
+
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+// 🛠️ NDK Hatasını Önlemek İçin Root Build Dizinini Ayarla
+rootProject.buildDir = "../build"
+
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
+
+// 🚀 Gradle Wrapper Güncellemesi
+wrapper {
+    gradleVersion = '8.6'
+    distributionType = Wrapper.DistributionType.ALL
+}

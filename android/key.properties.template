@@ -1,0 +1,8 @@
+# Android keystore configuration
+# Replace these values with your actual keystore information
+# Then rename this file to key.properties
+
+storeFile=/path/to/your/meetmaxi.keystore
+storePassword=your_keystore_password
+keyAlias=meetmaxi
+keyPassword=your_key_password

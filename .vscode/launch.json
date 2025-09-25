@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "MeetMaxi (hot reload)",
+            "request": "launch",
+            "type": "flutter",
+            "args": [
+                "--hot"
+            ]
+        },
+        {
+            "name": "MeetMaxi (profile mode)",
+            "request": "launch",
+            "type": "flutter",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "MeetMaxi (release mode)",
+            "request": "launch",
+            "type": "flutter",
+            "flutterMode": "release"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "meetmaxi-apr-2025-6ed9d"
+  },
+  "targets": {
+    "meetmaxi-apr-2025-6ed9d": {
+      "hosting": {
+        "meetmaxi": [
+          "meetmaxi-apr-2025-6ed9d"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

@@ -1,0 +1,2 @@
+/Users/ashokjaiswal/Development/Axar/app/askmaxie/android/app/.cxx/RelWithDebInfo/3a5i6k6x/x86_64/CMakeFiles/edit_cache.dir
+/Users/ashokjaiswal/Development/Axar/app/askmaxie/android/app/.cxx/RelWithDebInfo/3a5i6k6x/x86_64/CMakeFiles/rebuild_cache.dir

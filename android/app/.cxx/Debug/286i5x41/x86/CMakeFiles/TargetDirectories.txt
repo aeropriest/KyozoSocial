@@ -1,0 +1,2 @@
+/Users/oguzhan/Desktop/Projects/askmaxie/android/app/.cxx/Debug/286i5x41/x86/CMakeFiles/edit_cache.dir
+/Users/oguzhan/Desktop/Projects/askmaxie/android/app/.cxx/Debug/286i5x41/x86/CMakeFiles/rebuild_cache.dir

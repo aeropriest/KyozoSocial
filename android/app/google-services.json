@@ -1,0 +1,118 @@
+{
+  "project_info": {
+    "project_number": "466353420949",
+    "project_id": "meetmaxi-apr-2025-6ed9d",
+    "storage_bucket": "meetmaxi-apr-2025-6ed9d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:466353420949:android:38ef56248efd05220f799c",
+        "android_client_info": {
+          "package_name": "ai.axartoys.meetmaxi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "466353420949-vs47ollh0v0meqo7lggrbches8goog15.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_k88K08UUl9UKetuWyjtnhdkiug6s7FY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "466353420949-vs47ollh0v0meqo7lggrbches8goog15.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "466353420949-3so18proq68b2s9stsovmitvo2kogubq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.meetmaxi.meetmaxi"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:466353420949:android:7d348a21f9340ae00f799c",
+        "android_client_info": {
+          "package_name": "com.example.flutter_firebase_demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "466353420949-vs47ollh0v0meqo7lggrbches8goog15.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_k88K08UUl9UKetuWyjtnhdkiug6s7FY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "466353420949-vs47ollh0v0meqo7lggrbches8goog15.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "466353420949-3so18proq68b2s9stsovmitvo2kogubq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.meetmaxi.meetmaxi"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:466353420949:android:6d48e7cd151f8c080f799c",
+        "android_client_info": {
+          "package_name": "com.meetmaxi.meetmaxi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "466353420949-vs47ollh0v0meqo7lggrbches8goog15.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_k88K08UUl9UKetuWyjtnhdkiug6s7FY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "466353420949-vs47ollh0v0meqo7lggrbches8goog15.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "466353420949-3so18proq68b2s9stsovmitvo2kogubq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.meetmaxi.meetmaxi"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

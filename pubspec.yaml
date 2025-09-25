@@ -1,0 +1,119 @@
+name: kyozosocial
+description: "KyozoSocial - Social Authentication App"
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Firebase core and authentication
+  firebase_core: ^3.12.0
+  cloud_firestore: ^5.6.5
+  firebase_auth: ^5.5.0
+  
+  # UI and icons
+  font_awesome_flutter: ^10.8.0
+  google_fonts: ^6.1.0
+
+  # Authentication providers
+  shared_preferences: ^2.5.2
+  google_sign_in: ^6.2.2
+
+  # State management
+  provider: ^6.1.2
+
+  # Loading indicators
+  flutter_spinkit: ^5.2.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.3.9
+  golden_toolkit: ^0.15.0
+  golden_screenshot: ^3.2.0
+
+
+# Flutter Native Splash configuration
+flutter_native_splash:
+  color: "#FFFFFF"
+  image: assets/images/maxi_blue.png
+  android: true
+  ios: true
+  android_12:
+    image: assets/images/maxi_blue.png
+    icon_background_color: "#FFFFFF"
+  # Control image size with these parameters
+  fullscreen: false
+  android_gravity: center
+  ios_content_mode: center
+  web_image_mode: center
+
+# Flutter Launcher Icons configuration
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon.png"
+  remove_alpha_ios: true
+  min_sdk_android: 24
+  background_color: "#5A4C8E"
+  android_12:
+    foreground_image: "assets/icon.png"
+    background_color: "#5A4C8E"
+    foreground_inset: 100
+
+  adaptive_icon:
+    foreground_image: "assets/icon.png"
+    background_color: "#5A4C8E"
+    foreground_inset: 100
+
+  ios_settings:
+    remove_alpha_ios: true
+    size: "1024x1024"
+    background_color: "#5A4C8E"
+    image_path: "assets/icon.png"
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/fonts/
+    - assets/images/
+
+  fonts:
+    - family: Kufam
+      fonts:
+        - asset: assets/fonts/Kufam-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Kufam-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Kufam-BoldItalic.ttf
+          weight: 700
+        - asset: assets/fonts/Kufam-Italic.ttf
+          style: italic
+          weight: 400
+        - asset: assets/fonts/Kufam-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Kufam-MediumItalic.ttf
+          weight: 500
+        - asset: assets/fonts/Kufam-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Kufam-SemiBoldItalic.ttf
+          weight: 600
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins/Poppins-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Poppins/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Poppins/Poppins-Bold.ttf
+          weight: 700
