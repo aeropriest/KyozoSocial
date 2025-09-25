@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../core/widgets/gradient_text.dart';
 import '../../../core/widgets/kyozo_button.dart';
+import '../../../core/widgets/kyozo_input.dart';
 import '../../../services/auth_service.dart';
 import 'verify_email_screen.dart';
 
@@ -167,30 +168,44 @@ class _SignInScreenState extends State<SignInScreen> {
       backgroundColor: AppTheme.backgroundColor,
       body: Container(
         decoration: const BoxDecoration(
-          // Add subtle texture background like Next.js design
+          // Add textured background like Next.js design
           color: AppTheme.backgroundColor,
+          image: DecorationImage(
+            image: AssetImage('assets/images/light-texture-bg.png'),
+            fit: BoxFit.cover,
+            opacity: 0.3, // Subtle texture overlay
+          ),
         ),
         child: SafeArea(
           child: Column(
             children: [
               // App header with gradient title
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 32.0),
+                padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 24.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    // App logo with gradient text
-                    const GradientHeading(
-                      'KyozoSocial',
-                      fontSize: 36,
-                      fontWeight: FontWeight.w400,
+                    // App logo image
+                    Image.asset(
+                      'assets/images/kyozo_logo.png',
+                      height: 60,
+                      fit: BoxFit.contain,
                     ),
                     const SizedBox(height: 16),
+                    // Main gradient heading with creative minds style
+                    const GradientHeading(
+                      'Where creative minds converge',
+                      fontSize: 28,
+                      fontWeight: FontWeight.w400,
+                    ),
+                    const SizedBox(height: 12),
                     Text(
                       _isSignIn ? 'Welcome back!' : 'Join the creative universe',
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
                         color: AppTheme.textSecondaryColor,
                         fontWeight: FontWeight.w300,
+                        fontSize: 16,
+                        letterSpacing: 0.3,
                       ),
                       textAlign: TextAlign.center,
                     ),
@@ -202,20 +217,25 @@ class _SignInScreenState extends State<SignInScreen> {
             Expanded(
               child: SingleChildScrollView(
                 child: Padding(
-                  padding: const EdgeInsets.all(24.0),
-                  child: Form(
-                    key: _formKey,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 16.0),
+                  child: Center(
+                    child: Container(
+                      constraints: const BoxConstraints(maxWidth: 350),
+                      child: Form(
+                        key: _formKey,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
                 
                 // Name field (only in sign-up mode)
                 if (!_isSignIn) ...[                
-                  TextFormField(
+                  KyozoInput(
                     controller: _nameController,
-                    decoration: const InputDecoration(
-                      labelText: 'Full Name',
-                      hintText: 'Enter your full name',
+                    labelText: 'Full Name',
+                    prefixIcon: Icon(
+                      Icons.person_outline,
+                      color: AppTheme.textSecondaryColor,
+                      size: 20,
                     ),
                     validator: (value) {
                       if (!_isSignIn && (value == null || value.isEmpty)) {
@@ -225,18 +245,19 @@ class _SignInScreenState extends State<SignInScreen> {
                     },
                   ),
                   
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 16),
                 ],
                 
                 // Email field
-                TextFormField(
+                KyozoInput(
                   controller: _emailController,
-                  decoration: const InputDecoration(
-                    labelText: 'Email',
-                    hintText: 'Enter your email address',
-                    prefixIcon: Icon(Icons.email_outlined),
-                  ),
+                  labelText: 'Email',
                   keyboardType: TextInputType.emailAddress,
+                  prefixIcon: Icon(
+                    Icons.email_outlined,
+                    color: AppTheme.textSecondaryColor,
+                    size: 20,
+                  ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter your email';
@@ -248,17 +269,18 @@ class _SignInScreenState extends State<SignInScreen> {
                   },
                 ),
                 
-                const SizedBox(height: 20),
+                const SizedBox(height: 16),
                 
                 // Password field
-                TextFormField(
+                KyozoInput(
                   controller: _passwordController,
-                  decoration: const InputDecoration(
-                    labelText: 'Password',
-                    hintText: 'Enter your password',
-                    prefixIcon: Icon(Icons.lock_outline),
-                  ),
+                  labelText: 'Password',
                   obscureText: true,
+                  prefixIcon: Icon(
+                    Icons.lock_outline,
+                    color: AppTheme.textSecondaryColor,
+                    size: 20,
+                  ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter your password';
@@ -272,16 +294,17 @@ class _SignInScreenState extends State<SignInScreen> {
                 
                 // Confirm Password field (only in sign-up mode)
                 if (!_isSignIn) ...[                
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 16),
                   
-                  TextFormField(
+                  KyozoInput(
                     controller: _confirmPasswordController,
-                    decoration: const InputDecoration(
-                      labelText: 'Confirm Password',
-                      hintText: 'Confirm your password',
-                      prefixIcon: Icon(Icons.lock_outline),
-                    ),
+                    labelText: 'Confirm Password',
                     obscureText: true,
+                    prefixIcon: Icon(
+                      Icons.lock_outline,
+                      color: AppTheme.textSecondaryColor,
+                      size: 20,
+                    ),
                     validator: (value) {
                       if (!_isSignIn) {
                         if (value == null || value.isEmpty) {
@@ -296,7 +319,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                 ],
                 
-                const SizedBox(height: 16),
+                const SizedBox(height: 12),
                 
                 // Forgot password
                 if (_isSignIn)
@@ -340,9 +363,11 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
                   ),
                 
-                const SizedBox(height: 40),
+                const SizedBox(height: 24),
                 
-                      ],
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -351,7 +376,7 @@ class _SignInScreenState extends State<SignInScreen> {
             
               // Bottom section with Sign In button and Sign Up link
               Padding(
-                padding: const EdgeInsets.all(24.0),
+                padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 24.0),
                 child: Column(
                   children: [
                     // Sign In/Sign Up button
@@ -386,17 +411,54 @@ class _SignInScreenState extends State<SignInScreen> {
                     
                     const SizedBox(height: 24),
                     
-                    // Google Sign-In button
-                    KyozoButton(
-                      text: 'Continue with Google',
-                      onPressed: _isLoading ? null : _signInWithGoogle,
-                      variant: KyozoButtonVariant.outline,
-                      size: KyozoButtonSize.large,
-                      fullWidth: true,
-                      icon: const FaIcon(
-                        FontAwesomeIcons.google,
-                        color: Colors.red,
-                        size: 18,
+                    // Google Sign-In button with custom styling
+                    Container(
+                      width: double.infinity,
+                      height: 56,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(50),
+                        border: Border.all(
+                          color: AppTheme.borderColor,
+                          width: 0.5,
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withValues(alpha: 0.05),
+                            blurRadius: 2,
+                            offset: const Offset(0, 1),
+                          ),
+                        ],
+                      ),
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          borderRadius: BorderRadius.circular(50),
+                          onTap: _isLoading ? null : _signInWithGoogle,
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 24),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const FaIcon(
+                                  FontAwesomeIcons.google,
+                                  color: Color(0xFFDB4437), // Google red
+                                  size: 18,
+                                ),
+                                const SizedBox(width: 12),
+                                Text(
+                                  'Continue with Google',
+                                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                                    color: AppTheme.textPrimaryColor,
+                                    fontWeight: FontWeight.w300,
+                                    fontSize: 16,
+                                    letterSpacing: 0.5,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
                       ),
                     ),
                     

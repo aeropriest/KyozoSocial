@@ -28,8 +28,9 @@ class GradientText extends StatelessWidget {
     return ShaderMask(
       shaderCallback: (bounds) => LinearGradient(
         colors: colors,
-        begin: begin,
-        end: end,
+        begin: Alignment.centerLeft,
+        end: Alignment.centerRight,
+        stops: const [0.0, 1.0], // Ensure full gradient coverage
       ).createShader(
         Rect.fromLTWH(0, 0, bounds.width, bounds.height),
       ),
@@ -37,10 +38,15 @@ class GradientText extends StatelessWidget {
         text,
         style: style?.copyWith(
           color: Colors.white, // This will be masked by the gradient
+          height: 1.1, // Tighter line height for better look
+          letterSpacing: -0.5, // Slightly tighter letter spacing
+          fontWeight: FontWeight.w500, // Slightly bolder for better gradient visibility
         ) ?? TextStyle(
           color: Colors.white,
           fontSize: 24,
-          fontWeight: FontWeight.w400,
+          fontWeight: FontWeight.w500,
+          height: 1.1,
+          letterSpacing: -0.5,
         ),
         textAlign: textAlign,
       ),
@@ -69,7 +75,9 @@ class GradientHeading extends StatelessWidget {
       text,
       style: Theme.of(context).textTheme.headlineMedium?.copyWith(
         fontSize: fontSize ?? 32,
-        fontWeight: fontWeight ?? FontWeight.w400,
+        fontWeight: fontWeight ?? FontWeight.w500,
+        height: 1.1,
+        letterSpacing: -0.5,
       ),
       textAlign: textAlign,
     );

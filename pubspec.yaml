@@ -59,17 +59,17 @@ flutter_native_splash:
 flutter_launcher_icons:
   android: true
   ios: true
-  image_path: "assets/icon.png"
+  image_path: "assets/images/icon.png"
   remove_alpha_ios: true
   min_sdk_android: 24
   background_color: "#5A4C8E"
   android_12:
-    foreground_image: "assets/icon.png"
+    foreground_image: "assets/images/icon.png"
     background_color: "#5A4C8E"
     foreground_inset: 100
 
   adaptive_icon:
-    foreground_image: "assets/icon.png"
+    foreground_image: "assets/images/icon.png"
     background_color: "#5A4C8E"
     foreground_inset: 100
 
@@ -77,7 +77,7 @@ flutter_launcher_icons:
     remove_alpha_ios: true
     size: "1024x1024"
     background_color: "#5A4C8E"
-    image_path: "assets/icon.png"
+    image_path: "assets/images/icon.png"
 
 flutter:
   uses-material-design: true
